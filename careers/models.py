@@ -19,6 +19,8 @@ class CareerPage(models.Model):
 
 
 # Job/internship positions
+
+
 class JobPosition(models.Model):
     JOB_TYPES = [
         ("full-time", "Full-time"),

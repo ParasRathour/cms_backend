@@ -9,7 +9,7 @@ class ContactSubmission(models.Model):
     phone = models.CharField(max_length=20)
     subject = models.CharField(max_length=300)
     message = models.TextField()
-    ip_address = models.GenericIPAddressField()
+    ip_address = models.GenericIPAddressField(default="0.0.0.0")
     submitted_at = models.DateTimeField(auto_now_add=True)
     read = models.BooleanField(default=False)
     notes = models.TextField(blank=True, null=True)
@@ -29,7 +29,7 @@ class DemoRequestSubmission(models.Model):
     phone = models.CharField(max_length=20)
     cohort_size = models.CharField(max_length=100)
     message = models.TextField(blank=True, null=True)
-    ip_address = models.GenericIPAddressField()
+    ip_address = models.GenericIPAddressField(default="0.0.0.0")
     submitted_at = models.DateTimeField(auto_now_add=True)
     read = models.BooleanField(default=False)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="new")
@@ -59,7 +59,7 @@ class AdmissionFormSubmission(models.Model):
         max_length=20, choices=STATUS_CHOICES, default="submitted"
     )
     notes = models.TextField(blank=True, null=True)
-    ip_address = models.GenericIPAddressField()
+    ip_address = models.GenericIPAddressField(default="0.0.0.0")
 
 
 # Internship application
@@ -86,4 +86,4 @@ class InternshipApplicationSubmission(models.Model):
         max_length=20, choices=STATUS_CHOICES, default="submitted"
     )
     notes = models.TextField(blank=True, null=True)
-    ip_address = models.GenericIPAddressField()
+    ip_address = models.GenericIPAddressField(default="0.0.0.0")
