@@ -48,54 +48,29 @@ cms_backend/
 └── manage.py       # Django CLI
 
 
-## ⚙️ Setup Instructions
+---
 
+### 2️⃣ Setup Instructions tree
+- Right now, the setup section is using numbered steps with extra `code Bash` inside the ```text block.  
+- You can make it **look like the Project Structure tree** by indenting commands under each step, like this:
+
+```text
 1️⃣ Clone Repository
-code
-Bash
-git clone cms_backend
-cd cms_backend
-
+│   git clone https://github.com/ParasRathour/cms_backend.git
+│   cd cms_backend
 2️⃣ Create Virtual Environment
-code
-Bash
-python -m venv venv
-# Activate on Windows:
-venv\Scripts\activate   
-# Activate on macOS/Linux:
-source venv/bin/activate
-
+│   python -m venv venv
+│   # Activate on Windows:
+│   venv\Scripts\activate
+│   # Activate on macOS/Linux:
+│   source venv/bin/activate
 3️⃣ Install Dependencies
-code
-Bash
-pip install -r requirements.txt
-
-4️⃣ Setup Environment Variables
-Create a .env file in the root directory:
-code
-Env
-SECRET_KEY=your_django_secret_key
-DEBUG=True
-ALLOWED_HOSTS=127.0.0.1,localhost
-
-5️⃣ Run Migrations
-code
-Bash
-python manage.py makemigrations
-python manage.py migrate
-
-6️⃣ Create Superuser
-code
-Bash
-python manage.py createsuperuser
-
-7️⃣ Run Server
-code
-Bash
-python manage.py runserver
+│   pip install -r requirements.txt
+---
 
 ## 🔗 API Endpoints ## 
 
+```text
 📄 Pages
 GET /api/v1/pages/home/ - Home page data
 GET /api/v1/pages/about/ - About page data
@@ -123,30 +98,45 @@ GET /api/v1/gallery/ - All gallery items
 GET /api/v1/gallery/projects/ - Portfolio projects
 GET /api/v1/gallery/partners/ - Partner logos
 
+---
+
 🔐 Admin Panel
 Access the dashboard at: http://127.0.0.1:8000/admin/
-Key features for Admins:
-Full CRUD on courses and modules.
-Review and download form submissions (Resumes/PDFs).
-Update site-wide metadata (SEO, Contact info).
-Manage job openings and internship listings.
+
+**Key features:**
+- Full CRUD on courses and modules
+- Review and download form submissions (Resumes/PDFs)
+- Update site-wide metadata (SEO, Contact info)
+- Manage job openings and internship listings
+---
 
 📦 Validation Features
+
+```text
 File Uploads: Restricted to PDF only for resumes; size limit 5MB.
 Images: Format validation for JPG, PNG, and WebP.
 Data Integrity: JSON field structure validation for dynamic sections.
 Fields: Built-in email and phone number format enforcement.
 
 ## 🚀 Production Notes
+
+```text
 Change DEBUG to False in .env.
 Use Gunicorn or Uvicorn as the WSGI/ASGI server.
 Set up Nginx for reverse proxy and static file serving.
 Connect a production database like PostgreSQL.
 Configure AWS S3 or Cloudinary for media file storage.
 
+---
+
 ## 👨‍💻 Author
+```text
 Paras Rathour
+
+---
+
 ⭐ Submission Notes
+```text
 This project fulfills the following requirements:
 Implementation of all 18+ required models.
 Clean, decoupled Django app architecture.
