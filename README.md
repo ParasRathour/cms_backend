@@ -50,11 +50,8 @@ cms_backend/
 
 ---
 
-### 2️⃣ Setup Instructions tree
-- Right now, the setup section is using numbered steps with extra `code Bash` inside the ```text block.  
-- You can make it **look like the Project Structure tree** by indenting commands under each step, like this:
+## 2️⃣ Setup Instructions tree
 
-```text
 1️⃣ Clone Repository
 │   git clone https://github.com/ParasRathour/cms_backend.git
 │   cd cms_backend
@@ -66,11 +63,23 @@ cms_backend/
 │   source venv/bin/activate
 3️⃣ Install Dependencies
 │   pip install -r requirements.txt
+4️⃣ Setup Environment Variables
+│   Create a `.env` file in the root directory:
+│       SECRET_KEY=your_django_secret_key
+│       DEBUG=True
+│       ALLOWED_HOSTS=127.0.0.1,localhost
+5️⃣ Run Migrations
+│   python manage.py makemigrations
+│   python manage.py migrate
+6️⃣ Create Superuser
+│   python manage.py createsuperuser
+7️⃣ Run Server
+    python manage.py runserver
+
 ---
 
 ## 🔗 API Endpoints ## 
 
-```text
 📄 Pages
 GET /api/v1/pages/home/ - Home page data
 GET /api/v1/pages/about/ - About page data
@@ -112,7 +121,6 @@ Access the dashboard at: http://127.0.0.1:8000/admin/
 
 📦 Validation Features
 
-```text
 File Uploads: Restricted to PDF only for resumes; size limit 5MB.
 Images: Format validation for JPG, PNG, and WebP.
 Data Integrity: JSON field structure validation for dynamic sections.
@@ -120,7 +128,6 @@ Fields: Built-in email and phone number format enforcement.
 
 ## 🚀 Production Notes
 
-```text
 Change DEBUG to False in .env.
 Use Gunicorn or Uvicorn as the WSGI/ASGI server.
 Set up Nginx for reverse proxy and static file serving.
@@ -130,13 +137,13 @@ Configure AWS S3 or Cloudinary for media file storage.
 ---
 
 ## 👨‍💻 Author
-```text
+
 Paras Rathour
 
 ---
 
 ⭐ Submission Notes
-```text
+
 This project fulfills the following requirements:
 Implementation of all 18+ required models.
 Clean, decoupled Django app architecture.
