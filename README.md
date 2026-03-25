@@ -46,93 +46,117 @@ cms_backend/
 ├── cms_backend/    # Project settings and URL configurations
 ├── media/          # Directory for user-uploaded files
 └── manage.py       # Django CLI
-
-
----
-
-## 2️⃣ Setup Instructions tree
-
-1️⃣ Clone Repository
-│   git clone https://github.com/ParasRathour/cms_backend.git
-│   cd cms_backend
-2️⃣ Create Virtual Environment
-│   python -m venv venv
-│   # Activate on Windows:
-│   venv\Scripts\activate
-│   # Activate on macOS/Linux:
-│   source venv/bin/activate
-3️⃣ Install Dependencies
-│   pip install -r requirements.txt
-4️⃣ Setup Environment Variables
-│   Create a `.env` file in the root directory:
-│       SECRET_KEY=your_django_secret_key
-│       DEBUG=True
-│       ALLOWED_HOSTS=127.0.0.1,localhost
-5️⃣ Run Migrations
-│   python manage.py makemigrations
-│   python manage.py migrate
-6️⃣ Create Superuser
-│   python manage.py createsuperuser
-7️⃣ Run Server
-    python manage.py runserver
+```
 
 ---
 
-## 🔗 API Endpoints ## 
+## ⚙️ Setup Instructions
 
-📄 Pages
-GET /api/v1/pages/home/ - Home page data
-GET /api/v1/pages/about/ - About page data
-GET /api/v1/pages/services/ - Services page data
-GET /api/v1/pages/site/meta/ - Site-wide metadata (Logo, Contact, Socials)
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/ParasRathour/cms_backend.git
+cd cms_backend
+```
 
-🎓 Courses
-GET /api/v1/courses/ - List all courses
-GET /api/v1/courses/<slug>/ - Individual course details
-GET /api/v1/courses/search/?q= - Search courses
+### 2️⃣ Create Virtual Environment
+```bash
+python -m venv venv
+# Activate on Windows:
+venv\Scripts\activate
+# Activate on macOS/Linux:
+source venv/bin/activate
+```
 
-💼 Careers
-GET /api/v1/careers/page/ - Career page CMS content
-GET /api/v1/careers/positions/ - List open jobs/internships
-GET /api/v1/careers/positions/<id>/ - Job details
+### 3️⃣ Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-📝 Forms (POST)
-POST /api/v1/forms/contact/ - General inquiries
-POST /api/v1/forms/demo-request/ - Request a demo
-POST /api/v1/forms/admission/ - Course admissions
-POST /api/v1/forms/internship-apply/<id>/ - Apply for a position
+### 4️⃣ Setup Environment Variables
+Create a `.env` file in the root directory:
+```
+SECRET_KEY=your_django_secret_key
+DEBUG=True
+ALLOWED_HOSTS=127.0.0.1,localhost
+```
 
-🖼️ Gallery & Media
-GET /api/v1/gallery/ - All gallery items
-GET /api/v1/gallery/projects/ - Portfolio projects
-GET /api/v1/gallery/partners/ - Partner logos
+### 5️⃣ Run Migrations
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### 6️⃣ Create Superuser
+```bash
+python manage.py createsuperuser
+```
+
+### 7️⃣ Run Server
+```bash
+python manage.py runserver
+```
 
 ---
 
-🔐 Admin Panel
-Access the dashboard at: http://127.0.0.1:8000/admin/
+## 🔗 API Endpoints
+
+### 📄 Pages
+- `GET /api/v1/pages/home/` - Home page data
+- `GET /api/v1/pages/about/` - About page data
+- `GET /api/v1/pages/services/` - Services page data
+- `GET /api/v1/pages/site/meta/` - Site-wide metadata (Logo, Contact, Socials)
+
+### 🎓 Courses
+- `GET /api/v1/courses/` - List all courses
+- `GET /api/v1/courses/<slug>/` - Individual course details
+- `GET /api/v1/courses/search/?q=` - Search courses
+
+### 💼 Careers
+- `GET /api/v1/careers/page/` - Career page CMS content
+- `GET /api/v1/careers/positions/` - List open jobs/internships
+- `GET /api/v1/careers/positions/<id>/` - Job details
+
+### 📝 Forms (POST)
+- `POST /api/v1/forms/contact/` - General inquiries
+- `POST /api/v1/forms/demo-request/` - Request a demo
+- `POST /api/v1/forms/admission/` - Course admissions
+- `POST /api/v1/forms/internship-apply/<id>/` - Apply for a position
+
+### 🖼️ Gallery & Media
+- `GET /api/v1/gallery/` - All gallery items
+- `GET /api/v1/gallery/projects/` - Portfolio projects
+- `GET /api/v1/gallery/partners/` - Partner logos
+
+---
+
+## 🔐 Admin Panel
+
+Access the dashboard at: `http://127.0.0.1:8000/admin/`
 
 **Key features:**
 - Full CRUD on courses and modules
 - Review and download form submissions (Resumes/PDFs)
 - Update site-wide metadata (SEO, Contact info)
 - Manage job openings and internship listings
+
 ---
 
-📦 Validation Features
+## 📦 Validation Features
 
-File Uploads: Restricted to PDF only for resumes; size limit 5MB.
-Images: Format validation for JPG, PNG, and WebP.
-Data Integrity: JSON field structure validation for dynamic sections.
-Fields: Built-in email and phone number format enforcement.
+- **File Uploads:** Restricted to PDF only for resumes; size limit 5MB.
+- **Images:** Format validation for JPG, PNG, and WebP.
+- **Data Integrity:** JSON field structure validation for dynamic sections.
+- **Fields:** Built-in email and phone number format enforcement.
+
+---
 
 ## 🚀 Production Notes
 
-Change DEBUG to False in .env.
-Use Gunicorn or Uvicorn as the WSGI/ASGI server.
-Set up Nginx for reverse proxy and static file serving.
-Connect a production database like PostgreSQL.
-Configure AWS S3 or Cloudinary for media file storage.
+- Change `DEBUG` to `False` in `.env`
+- Use Gunicorn or Uvicorn as the WSGI/ASGI server
+- Set up Nginx for reverse proxy and static file serving
+- Connect a production database like PostgreSQL
+- Configure AWS S3 or Cloudinary for media file storage
 
 ---
 
@@ -142,11 +166,11 @@ Paras Rathour
 
 ---
 
-⭐ Submission Notes
+## ⭐ Submission Notes
 
 This project fulfills the following requirements:
-Implementation of all 18+ required models.
-Clean, decoupled Django app architecture.
-Full Admin Panel customization.
-Robust REST API suite with proper status codes.
-File upload handling and validation logic.
+- Implementation of 18+ required models
+- Clean, decoupled Django app architecture
+- Full Admin Panel customization
+- Robust REST API suite with proper status codes
+- File upload handling and validation logic
